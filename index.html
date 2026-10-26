@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blueprint AI Studio — More booked jobs from the ads you're already paying for.</title>
-  <meta name="description" content="We fix the leaks between your ad and the booked appointment: slow callbacks, missed calls, and a weak landing page. Built for Orange County home service pros.">
+  <meta name="description" content="We find where your ads are losing you jobs: slow callbacks, missed calls, and a weak landing page. Built for Orange County home service pros.">
 
   <!--
     NICHE SWAP — edit only the NICHE const below. The page fills every
@@ -731,7 +731,7 @@
       <ul class="nav-links">
         <li><a href="#how">How It Works</a></li>
         <li><a href="#faq">FAQ</a></li>
-        <li><a href="#STRIPE_LEAK_REPORT" class="nav-cta">Get my Leak Report</a></li>
+        <li><a href="#STRIPE_LEAD_AUDIT" class="nav-cta">Get my Lead Audit</a></li>
       </ul>
     </div>
   </nav>
@@ -743,9 +743,9 @@
     <div class="hero-content">
       <div class="hero-badge">Orange County <span data-bind="niche">home service pros</span></div>
       <h1>More booked <span data-bind="jobs">jobs</span> from the ads you're already paying for.</h1>
-      <p class="hero-sub">We fix the leaks between your ad and the booked appointment: slow callbacks, missed calls, and a weak landing page. Built for Orange County <span data-bind="niche">home service pros</span>.</p>
+      <p class="hero-sub">We find where your ads are losing you <span data-bind="jobs">jobs</span>: slow callbacks, missed calls, and a weak landing page. Built for Orange County <span data-bind="niche">home service pros</span>.</p>
       <div class="hero-actions">
-        <a href="#STRIPE_LEAK_REPORT" class="btn btn-primary">Get my Leak Report ($49)</a>
+        <a href="#STRIPE_LEAD_AUDIT" class="btn btn-primary">Get my Lead Audit ($49)</a>
       </div>
     </div>
   </section>
@@ -762,13 +762,13 @@
         <article class="service-card offer-card featured reveal reveal-delay-1">
           <div class="service-badge">
             <div class="service-badge-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
-            <span class="service-badge-name">Leak Report</span>
+            <span class="service-badge-name">Lead Audit</span>
           </div>
           <p class="offer-price">$49</p>
           <p>We check your ads, landing page, Google listing and response time, then send a one-page list of where you're losing <span data-bind="jobs">jobs</span>.</p>
           <div class="offer-actions">
             <a href="#SAMPLE_REPORT" class="link-secondary">See a sample report</a>
-            <a href="#STRIPE_LEAK_REPORT" class="btn btn-primary">Get my Leak Report</a>
+            <a href="#STRIPE_LEAD_AUDIT" class="btn btn-primary">Get my Lead Audit</a>
           </div>
         </article>
 
@@ -840,8 +840,8 @@
   <section class="cta-section" id="cta">
     <div class="container">
       <div class="cta-box reveal">
-        <h2>Find out what your ads are leaking.</h2>
-        <a href="#STRIPE_LEAK_REPORT" class="btn btn-primary">Get my Leak Report</a>
+        <h2>Find out where your ads are losing <span data-bind="jobs">jobs</span>.</h2>
+        <a href="#STRIPE_LEAD_AUDIT" class="btn btn-primary">Get my Lead Audit</a>
       </div>
     </div>
   </section>
@@ -854,7 +854,7 @@
         <ul class="footer-links">
           <li><a href="#how">How It Works</a></li>
           <li><a href="#faq">FAQ</a></li>
-          <li><a href="#STRIPE_LEAK_REPORT">Leak Report</a></li>
+          <li><a href="#STRIPE_LEAD_AUDIT">Lead Audit</a></li>
         </ul>
       </div>
     </div>
@@ -872,7 +872,7 @@
       document.title = "Blueprint AI Studio — More booked " + jobs + " from the ads you're already paying for.";
       const meta = document.querySelector('meta[name="description"]');
       if (meta) {
-        meta.setAttribute('content', "We fix the leaks between your ad and the booked appointment: slow callbacks, missed calls, and a weak landing page. Built for Orange County " + NICHE.niche + ".");
+        meta.setAttribute('content', "We find where your ads are losing you " + jobs + ": slow callbacks, missed calls, and a weak landing page. Built for Orange County " + NICHE.niche + ".");
       }
     }
 
