@@ -172,13 +172,13 @@
 
     /* ===== HERO ===== */
     .hero {
-      min-height: 100vh;
+      min-height: auto;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       position: relative;
-      padding: 120px 24px 80px;
+      padding: 112px 24px 48px;
       overflow: hidden;
     }
 
@@ -323,7 +323,7 @@
 
     /* ===== SECTIONS ===== */
     section {
-      padding: 120px 0;
+      padding: 56px 0;
       position: relative;
     }
 
@@ -353,7 +353,7 @@
 
     .section-header {
       text-align: center;
-      margin-bottom: 64px;
+      margin-bottom: 28px;
     }
 
     .section-header .section-desc {
@@ -362,7 +362,7 @@
 
     /* ===== OFFERS ===== */
     .services {
-      background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-primary) 100%);
+      background: #ffffff;
     }
 
     .services-grid {
@@ -550,13 +550,36 @@
       width: 100%;
     }
 
+    .offer-points {
+      list-style: none;
+      margin: 0 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .offer-points li {
+      position: relative;
+      padding-left: 16px;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.45;
+    }
+
+    .offer-points li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
     /* ===== FOUNDING OFFER ===== */
     .founding {
       padding: 0;
-    }
-
-    #how {
-      padding-bottom: 72px;
     }
 
     .founding-band {
@@ -567,7 +590,12 @@
       text-align: center;
     }
 
-    .founding-band .section-label {
+    .founding-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-ink);
       margin-bottom: 10px;
     }
 
@@ -583,7 +611,7 @@
 
     /* ===== FAQ ===== */
     .faq {
-      background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-primary) 100%);
+      background: #ffffff;
     }
 
     .faq-list {
@@ -625,7 +653,7 @@
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 24px;
-      padding: 80px 40px;
+      padding: 56px 40px;
       position: relative;
       overflow: hidden;
       box-shadow: var(--shadow);
@@ -686,7 +714,8 @@
 
     /* ===== TRADES ===== */
     .trades {
-      padding: 56px 0 12px;
+      background: #ffffff;
+      padding: 48px 0;
     }
 
     .trades-title {
@@ -782,12 +811,13 @@
 
     /* ===== PATH ===== */
     .path {
-      padding: 40px 0 120px;
+      background: #EFF6FF;
+      padding: 48px 0 56px;
     }
 
     .path-header {
       text-align: center;
-      margin-bottom: 28px;
+      margin-bottom: 32px;
     }
 
     .path-title {
@@ -795,79 +825,147 @@
       font-weight: 700;
       letter-spacing: -0.03em;
       line-height: 1.2;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
 
     .path-lead {
       color: var(--text-secondary);
       font-size: 1.05rem;
-      line-height: 1.6;
+      line-height: 1.5;
       max-width: 640px;
-      margin: 0 auto 8px;
+      margin: 0 auto;
     }
 
-    .path-note {
-      color: var(--accent-ink);
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-    }
-
-    .path-strip {
-      list-style: none;
-      display: flex;
-      align-items: center;
+    .path-stage {
+      display: grid;
+      grid-template-columns: minmax(0, 520px) minmax(180px, 250px);
+      grid-template-rows: repeat(5, 56px);
+      column-gap: 22px;
+      row-gap: 8px;
       justify-content: center;
+      max-width: 800px;
+      margin: 8px auto 0;
+      padding-bottom: 20px;
     }
 
-    .path-strip li {
-      display: flex;
-      align-items: center;
-    }
-
-    .path-step {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 12px 18px;
-      font-size: 0.95rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: var(--heading);
-      box-shadow: var(--shadow);
-      white-space: nowrap;
-    }
-
-    .path-strip li:not(:last-child)::after {
-      content: '→';
-      color: var(--accent-ink);
-      margin: 0 12px;
-      font-size: 1.15rem;
-      font-weight: 600;
-      line-height: 1;
-    }
-
-    .path-followup {
+    .path-shape {
+      grid-column: 1;
+      grid-row: 1 / -1;
       position: relative;
     }
 
-    .path-callout {
+    .path-mark {
       position: absolute;
-      top: calc(100% + 18px);
-      left: 50%;
-      transform: translateX(-50%);
-      width: 260px;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .path-names {
+      list-style: none;
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-rows: repeat(5, 56px);
+      gap: 8px;
+    }
+
+    .path-names li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: -0.02em;
+      color: #1E2A44;
+      line-height: 1;
+      text-align: center;
+    }
+
+    .path-names li:nth-child(4),
+    .path-names li:nth-child(5) {
+      color: #fff;
+    }
+
+    .path-drops {
+      grid-column: 2;
+      grid-row: 1 / span 4;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-rows: repeat(4, 56px);
+      gap: 8px;
+      min-width: 0;
+    }
+
+    .path-drop {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: -0.02em;
+      color: #1E2A44;
+      line-height: 1.2;
+    }
+
+    .path-arrow {
+      width: 22px;
+      height: 12px;
+      flex-shrink: 0;
+    }
+
+    .path-drop-follow {
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+      gap: 8px;
+      padding-top: 16px;
+    }
+
+    .path-drop-line {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .path-aside {
+      position: relative;
       margin: 0;
       padding: 10px 12px;
-      text-align: center;
-      font-size: 0.78rem;
+      font-size: 0.82rem;
       font-weight: 500;
-      line-height: 1.45;
+      line-height: 1.4;
       color: var(--text-secondary);
       background: #fff;
-      border: 1px solid rgba(29, 78, 216, 0.22);
+      border: 1px solid rgba(29, 78, 216, 0.28);
       box-shadow: var(--shadow);
       border-radius: 12px;
+    }
+
+    .path-aside::before {
+      content: '';
+      position: absolute;
+      left: -6px;
+      top: 12px;
+      width: 10px;
+      height: 10px;
+      background: #fff;
+      border-left: 1px solid rgba(29, 78, 216, 0.28);
+      border-bottom: 1px solid rgba(29, 78, 216, 0.28);
+      transform: rotate(45deg);
+    }
+
+    .path-cta {
+      display: flex;
+      width: fit-content;
+      margin: 8px auto 0;
     }
 
     /* ===== SCROLL ANIMATIONS ===== */
@@ -894,8 +992,7 @@
         margin: 0 auto;
       }
       .trades-grid { grid-template-columns: 1fr 1fr; }
-      .path-step { padding: 10px 14px; font-size: 0.875rem; }
-      .path-strip li:not(:last-child)::after { margin: 0 8px; }
+      .path-stage { grid-template-columns: minmax(0, 1fr) 210px; max-width: 720px; }
     }
 
     @media (max-width: 768px) {
@@ -918,18 +1015,17 @@
 
       .logo { font-size: 1rem; }
 
-      section { padding: 80px 0; }
-      #how { padding-bottom: 48px; }
-      .hero { padding: 100px 20px 60px; min-height: auto; }
-      .hero-sub { margin-bottom: 36px; }
+      section { padding: 48px 0; }
+      .hero { padding: 100px 20px 36px; min-height: auto; }
+      .hero-sub { margin-bottom: 28px; }
       .hero-actions { width: 100%; }
       .hero-actions .btn { width: 100%; }
-      .cta-box { padding: 48px 20px; }
+      .cta-box { padding: 40px 20px; }
       .service-card { padding: 28px 22px; }
       .faq-item { padding: 22px 20px; }
-      .founding-band { padding: 32px 0; }
-      .section-header { margin-bottom: 40px; }
-      .trades { padding: 36px 0 4px; }
+      .founding-band { padding: 28px 0; }
+      .section-header { margin-bottom: 24px; }
+      .trades { padding: 40px 0; }
       .trades-grid { grid-template-columns: 1fr; }
       .trade-card {
         flex-direction: row;
@@ -937,35 +1033,34 @@
         gap: 14px;
         padding: 18px 16px;
       }
-      .path { padding: 32px 0 16px; }
-      .path-strip {
-        flex-direction: column;
-        align-items: center;
+      .path { padding: 40px 0 44px; }
+      .path .container { padding-left: 16px; padding-right: 16px; }
+      .path-stage {
+        grid-template-columns: minmax(0, 1fr) minmax(132px, 146px);
+        grid-template-rows: repeat(5, 42px);
+        column-gap: 10px;
+        row-gap: 6px;
+        max-width: none;
+        padding-bottom: 36px;
       }
-      .path-strip li {
-        flex-direction: column;
-        width: min(100%, 280px);
+      .path-names {
+        grid-template-rows: repeat(5, 42px);
+        gap: 6px;
       }
-      .path-step {
-        width: 100%;
-        text-align: center;
+      .path-names li { font-size: 0.8rem; letter-spacing: -0.03em; }
+      .path-drops {
+        grid-template-rows: repeat(4, 42px);
+        gap: 6px;
       }
-      .path-strip li:not(:last-child)::after {
-        content: '↓';
-        margin: 8px 0;
+      .path-drop { font-size: 0.75rem; gap: 6px; }
+      .path-arrow { width: 16px; height: 9px; }
+      .path-drop-follow { gap: 6px; padding-top: 10px; }
+      .path-aside {
+        font-size: 0.75rem;
+        line-height: 1.35;
+        padding: 8px 8px 8px 10px;
       }
-      .path-followup {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-      }
-      .path-callout {
-        position: static;
-        transform: none;
-        width: 100%;
-        margin-top: 10px;
-      }
+      .path-cta { width: 100%; }
     }
 
     /* ===== SELECTION ===== */
@@ -988,7 +1083,6 @@
       </a>
       <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">&#9776;</button>
       <ul class="nav-links">
-        <li><a href="#how">How It Works</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#STRIPE_LEAD_AUDIT" class="nav-cta">Get my Lead Audit</a></li>
       </ul>
@@ -1002,7 +1096,7 @@
     <div class="hero-content">
       <div class="hero-badge"><span class="hero-badge-text">Orange County <span data-bind="niche">HVAC, roofing, plumbing and garage door companies</span></span></div>
       <h1>More booked <span data-bind="jobs">jobs</span> from the ads you're already paying for.</h1>
-      <p class="hero-sub">We find where your ads are losing you <span data-bind="jobs">jobs</span>: slow callbacks, missed calls, and a weak landing page. Built for Orange County <span data-bind="niche">HVAC, roofing, plumbing and garage door companies</span>.</p>
+      <p class="hero-sub">We find where your ads are losing you <span data-bind="jobs">jobs</span>: slow callbacks, missed calls, and a weak landing page.</p>
       <div class="hero-actions">
         <a href="#STRIPE_LEAD_AUDIT" class="btn btn-primary">Get my Lead Audit ($49)</a>
       </div>
@@ -1063,26 +1157,53 @@
     <div class="container">
       <div class="path-header reveal">
         <h2 class="path-title" id="path-title">The path from ad to booked job</h2>
-        <p class="path-lead">Not more ads. More booked jobs from the traffic you already have.</p>
-        <p class="path-note">Your Lead Audit checks every step.</p>
+        <p class="path-lead">Leads drop off at every step. We find where, and fix it.</p>
       </div>
-      <ol class="path-strip reveal">
-        <li><span class="path-step">Ad</span></li>
-        <li><span class="path-step">Offer</span></li>
-        <li><span class="path-step">Page</span></li>
-        <li>
-          <div class="path-followup">
-            <span class="path-step">Follow-up</span>
-            <p class="path-callout">Reply within an hour and you're up to 7x more likely to win the job.</p>
-          </div>
-        </li>
-        <li><span class="path-step">Booked Job</span></li>
-      </ol>
+      <div class="path-stage reveal">
+        <div class="path-shape">
+          <svg class="path-mark" viewBox="0 0 100 312" preserveAspectRatio="none" aria-hidden="true">
+            <polygon points="0,0 100,0 95,56 5,56" fill="#BFDBFE"/>
+            <polygon points="8,64 92,64 88,120 12,120" fill="#93C5FD"/>
+            <polygon points="15,128 85,128 82,184 18,184" fill="#60A5FA"/>
+            <polygon points="16,192 84,192 81,248 19,248" fill="#2563EB"/>
+            <polygon points="21,256 79,256 77,312 23,312" fill="#1D4ED8"/>
+          </svg>
+          <ul class="path-names">
+            <li>Ad</li>
+            <li>Offer</li>
+            <li>Page</li>
+            <li>Follow-up</li>
+            <li>Booked Job</li>
+          </ul>
+        </div>
+        <ul class="path-drops">
+          <li class="path-drop">
+            <svg class="path-arrow" viewBox="0 0 28 14" aria-hidden="true"><path d="M1 7h22M17 2l8 5-8 5" fill="none" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Wrong audience
+          </li>
+          <li class="path-drop">
+            <svg class="path-arrow" viewBox="0 0 28 14" aria-hidden="true"><path d="M1 7h22M17 2l8 5-8 5" fill="none" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Weak offer
+          </li>
+          <li class="path-drop">
+            <svg class="path-arrow" viewBox="0 0 28 14" aria-hidden="true"><path d="M1 7h22M17 2l8 5-8 5" fill="none" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Confusing page
+          </li>
+          <li class="path-drop path-drop-follow">
+            <span class="path-drop-line">
+              <svg class="path-arrow" viewBox="0 0 28 14" aria-hidden="true"><path d="M1 7h22M17 2l8 5-8 5" fill="none" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Slow reply
+            </span>
+            <p class="path-aside">Reply within an hour and you're up to 7x more likely to win the job.</p>
+          </li>
+        </ul>
+      </div>
+      <a class="btn btn-primary path-cta" href="#STRIPE_LEAD_AUDIT">Get my Lead Audit ($49)</a>
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
-  <section class="services" id="how">
+  <!-- PRICING -->
+  <section class="services" id="offers">
     <div class="container">
       <div class="section-header offers-intro reveal">
         <h2 class="section-title">We install a booked-jobs system in your business.</h2>
@@ -1096,7 +1217,10 @@
             <span class="service-badge-name">Lead Audit</span>
           </div>
           <p class="offer-price">$49</p>
-          <p>We check your ads, landing page, Google listing and response time, then send a one-page list of where you're losing <span data-bind="jobs">jobs</span>.</p>
+          <ul class="offer-points">
+            <li>Ads, landing page, Google listing, and response time</li>
+            <li>A one-page list of where you're losing <span data-bind="jobs">jobs</span></li>
+          </ul>
           <div class="offer-actions">
             <a href="#SAMPLE_REPORT" class="link-secondary">See a sample report</a>
             <a href="#STRIPE_LEAD_AUDIT" class="btn btn-primary">Get my Lead Audit</a>
@@ -1110,8 +1234,11 @@
           </div>
           <p class="offer-price">$1,500 <span>one-time</span></p>
           <h3 class="offer-headline">Every missed call gets a text back in under a minute.</h3>
-          <p>We build your free check or instant price page, plus missed-call text-back.</p>
-          <p>A landing page built for your ads, with call and book buttons up top, a review widget, missed-call text-back, and tracking.</p>
+          <ul class="offer-points">
+            <li>Free check or instant price page</li>
+            <li>Missed-call text-back</li>
+            <li>Call and book buttons, reviews, and tracking</li>
+          </ul>
           <div class="offer-actions">
             <a href="#STRIPE_SETUP" class="btn btn-primary">Build my system</a>
           </div>
@@ -1124,7 +1251,11 @@
           </div>
           <p class="offer-price">$750<span>/mo</span></p>
           <h3 class="offer-headline">Your slow months, full.</h3>
-          <p>We look after your Google listing and reviews, send follow-up texts and emails, and handle small edits. Every Monday you get a report with five numbers: leads, booked <span data-bind="jobs">jobs</span>, cost per booked <span data-bind="job">job</span>, response time and revenue.</p>
+          <ul class="offer-points">
+            <li>Google listing, reviews, and small edits</li>
+            <li>Follow-up texts and emails</li>
+            <li>Monday report: leads, booked <span data-bind="jobs">jobs</span>, cost per booked <span data-bind="job">job</span>, response time, and revenue</li>
+          </ul>
           <div class="offer-actions">
             <a href="#STRIPE_GROWTH" class="btn btn-primary">Run my system</a>
           </div>
@@ -1139,7 +1270,7 @@
     <div class="founding-band">
       <div class="container">
         <div class="reveal">
-          <p class="section-label">Founding offer</p>
+          <h2 class="founding-title">Founding offer</h2>
           <p class="founding-copy">Our first 3 clients get half off the system build ($750) in exchange for a testimonial and a short case study.</p>
         </div>
       </div>
@@ -1150,7 +1281,6 @@
   <section class="faq" id="faq">
     <div class="container">
       <div class="section-header reveal">
-        <p class="section-label">FAQ</p>
         <h2 class="section-title">Questions</h2>
       </div>
       <div class="faq-list">
@@ -1160,7 +1290,7 @@
         </article>
         <article class="faq-item reveal">
           <h3>Contracts?</h3>
-          <p>Growth is month to month.</p>
+          <p>Run the System is month to month.</p>
         </article>
         <article class="faq-item reveal">
           <h3>Do I need to run ads?</h3>
@@ -1186,7 +1316,6 @@
       <div class="footer-inner">
         <span class="footer-copy">&copy; 2026 Blueprint AI Studio. All rights reserved.</span>
         <ul class="footer-links">
-          <li><a href="#how">How It Works</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#STRIPE_LEAD_AUDIT">Lead Audit</a></li>
         </ul>
