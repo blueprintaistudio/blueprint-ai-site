@@ -508,6 +508,15 @@
       margin-left: 4px;
     }
 
+    .offer-headline {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      line-height: 1.35;
+      margin: 0 0 10px;
+    }
+
     .offer-actions {
       display: flex;
       flex-direction: column;
@@ -737,6 +746,72 @@
       line-height: 1.55;
     }
 
+    /* ===== PATH ===== */
+    .path {
+      padding: 40px 0 24px;
+    }
+
+    .path-header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .path-title {
+      font-size: clamp(1.35rem, 2.6vw, 1.75rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .path-lead {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      line-height: 1.6;
+      max-width: 640px;
+      margin: 0 auto 8px;
+    }
+
+    .path-note {
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .path-strip {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .path-strip li {
+      display: flex;
+      align-items: center;
+    }
+
+    .path-step {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      white-space: nowrap;
+    }
+
+    .path-strip li:not(:last-child)::after {
+      content: '→';
+      color: var(--accent);
+      margin: 0 12px;
+      font-size: 1.15rem;
+      font-weight: 600;
+      line-height: 1;
+    }
+
     /* ===== SCROLL ANIMATIONS ===== */
     .reveal {
       opacity: 0;
@@ -761,6 +836,8 @@
         margin: 0 auto;
       }
       .trades-grid { grid-template-columns: 1fr 1fr; }
+      .path-step { padding: 10px 14px; font-size: 0.875rem; }
+      .path-strip li:not(:last-child)::after { margin: 0 8px; }
     }
 
     @media (max-width: 768px) {
@@ -801,6 +878,23 @@
         align-items: flex-start;
         gap: 14px;
         padding: 18px 16px;
+      }
+      .path { padding: 32px 0 8px; }
+      .path-strip {
+        flex-direction: column;
+        align-items: center;
+      }
+      .path-strip li {
+        flex-direction: column;
+        width: min(100%, 280px);
+      }
+      .path-step {
+        width: 100%;
+        text-align: center;
+      }
+      .path-strip li:not(:last-child)::after {
+        content: '↓';
+        margin: 8px 0;
       }
     }
 
@@ -890,6 +984,24 @@
     </div>
   </section>
 
+  <!-- PATH -->
+  <section class="path" id="path" aria-labelledby="path-title">
+    <div class="container">
+      <div class="path-header reveal">
+        <h2 class="path-title" id="path-title">The path from ad to booked job</h2>
+        <p class="path-lead">Not more ads. More booked jobs from the traffic you already have.</p>
+        <p class="path-note">Your Lead Audit checks every step.</p>
+      </div>
+      <ol class="path-strip reveal">
+        <li><span class="path-step">Ad</span></li>
+        <li><span class="path-step">Offer</span></li>
+        <li><span class="path-step">Page</span></li>
+        <li><span class="path-step">Follow-up</span></li>
+        <li><span class="path-step">Booked Job</span></li>
+      </ol>
+    </div>
+  </section>
+
   <!-- HOW IT WORKS -->
   <section class="services" id="how">
     <div class="container">
@@ -918,6 +1030,7 @@
             <span class="service-badge-name">Setup</span>
           </div>
           <p class="offer-price">$1,500 <span>one-time</span></p>
+          <h3 class="offer-headline">Every missed call gets a text back in under a minute.</h3>
           <p>A landing page built for your ads, with call and book buttons up top, a review widget, missed-call text-back, and tracking.</p>
           <div class="offer-actions">
             <a href="#STRIPE_SETUP" class="btn btn-primary">Get Setup</a>
@@ -930,6 +1043,7 @@
             <span class="service-badge-name">Growth</span>
           </div>
           <p class="offer-price">$750<span>/mo</span></p>
+          <h3 class="offer-headline">Your slow months, full.</h3>
           <p>We look after your Google listing and reviews, send follow-up texts and emails, and handle small edits. Every Monday you get a report with five numbers: leads, booked <span data-bind="jobs">jobs</span>, cost per booked <span data-bind="job">job</span>, response time and revenue.</p>
           <div class="offer-actions">
             <a href="#STRIPE_GROWTH" class="btn btn-primary">Start Growth</a>
