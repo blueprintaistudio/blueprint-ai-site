@@ -748,7 +748,7 @@
 
     /* ===== PATH ===== */
     .path {
-      padding: 40px 0 24px;
+      padding: 40px 0 108px;
     }
 
     .path-header {
@@ -810,6 +810,28 @@
       font-size: 1.15rem;
       font-weight: 600;
       line-height: 1;
+    }
+
+    .path-followup {
+      position: relative;
+    }
+
+    .path-callout {
+      position: absolute;
+      top: calc(100% + 12px);
+      left: 50%;
+      transform: translateX(-50%);
+      width: 260px;
+      margin: 0;
+      padding: 10px 12px;
+      text-align: center;
+      font-size: 0.78rem;
+      font-weight: 500;
+      line-height: 1.45;
+      color: var(--text-secondary);
+      background: rgba(56,189,248,0.06);
+      border: 1px solid rgba(56,189,248,0.22);
+      border-radius: 12px;
     }
 
     /* ===== SCROLL ANIMATIONS ===== */
@@ -879,7 +901,7 @@
         gap: 14px;
         padding: 18px 16px;
       }
-      .path { padding: 32px 0 8px; }
+      .path { padding: 32px 0 16px; }
       .path-strip {
         flex-direction: column;
         align-items: center;
@@ -895,6 +917,18 @@
       .path-strip li:not(:last-child)::after {
         content: '↓';
         margin: 8px 0;
+      }
+      .path-followup {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+      .path-callout {
+        position: static;
+        transform: none;
+        width: 100%;
+        margin-top: 10px;
       }
     }
 
@@ -996,7 +1030,12 @@
         <li><span class="path-step">Ad</span></li>
         <li><span class="path-step">Offer</span></li>
         <li><span class="path-step">Page</span></li>
-        <li><span class="path-step">Follow-up</span></li>
+        <li>
+          <div class="path-followup">
+            <span class="path-step">Follow-up</span>
+            <p class="path-callout">Reply within an hour and you're up to 7x more likely to win the job.</p>
+          </div>
+        </li>
         <li><span class="path-step">Booked Job</span></li>
       </ol>
     </div>
@@ -1031,6 +1070,7 @@
           </div>
           <p class="offer-price">$1,500 <span>one-time</span></p>
           <h3 class="offer-headline">Every missed call gets a text back in under a minute.</h3>
+          <p>We build your free check or instant price page, plus missed-call text-back.</p>
           <p>A landing page built for your ads, with call and book buttons up top, a review widget, missed-call text-back, and tracking.</p>
           <div class="offer-actions">
             <a href="#STRIPE_SETUP" class="btn btn-primary">Get Setup</a>
