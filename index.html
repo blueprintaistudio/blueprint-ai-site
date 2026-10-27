@@ -838,13 +838,14 @@
 
     .path-stage {
       display: grid;
-      grid-template-columns: minmax(0, 520px) 220px;
+      grid-template-columns: minmax(0, 520px) minmax(180px, 250px);
       grid-template-rows: repeat(5, 56px);
-      column-gap: 28px;
+      column-gap: 22px;
       row-gap: 8px;
       justify-content: center;
-      max-width: 780px;
+      max-width: 800px;
       margin: 8px auto 0;
+      padding-bottom: 20px;
     }
 
     .path-shape {
@@ -890,14 +891,55 @@
       color: #fff;
     }
 
-    .path-aside {
+    .path-drops {
       grid-column: 2;
-      grid-row: 4;
-      align-self: center;
+      grid-row: 1 / span 4;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-rows: repeat(4, 56px);
+      gap: 8px;
+      min-width: 0;
+    }
+
+    .path-drop {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: -0.02em;
+      color: #1E2A44;
+      line-height: 1.2;
+    }
+
+    .path-arrow {
+      width: 22px;
+      height: 12px;
+      flex-shrink: 0;
+    }
+
+    .path-drop-follow {
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+      gap: 8px;
+      padding-top: 16px;
+    }
+
+    .path-drop-line {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .path-aside {
       position: relative;
       margin: 0;
       padding: 10px 12px;
-      font-size: 0.84rem;
+      font-size: 0.82rem;
       font-weight: 500;
       line-height: 1.4;
       color: var(--text-secondary);
@@ -911,13 +953,19 @@
       content: '';
       position: absolute;
       left: -6px;
-      top: 50%;
+      top: 12px;
       width: 10px;
       height: 10px;
       background: #fff;
       border-left: 1px solid rgba(29, 78, 216, 0.28);
       border-bottom: 1px solid rgba(29, 78, 216, 0.28);
-      transform: translateY(-50%) rotate(45deg);
+      transform: rotate(45deg);
+    }
+
+    .path-cta {
+      display: flex;
+      width: fit-content;
+      margin: 8px auto 0;
     }
 
     /* ===== SCROLL ANIMATIONS ===== */
@@ -944,7 +992,7 @@
         margin: 0 auto;
       }
       .trades-grid { grid-template-columns: 1fr 1fr; }
-      .path-stage { grid-template-columns: minmax(0, 1fr) 190px; max-width: 680px; }
+      .path-stage { grid-template-columns: minmax(0, 1fr) 210px; max-width: 720px; }
     }
 
     @media (max-width: 768px) {
@@ -988,22 +1036,31 @@
       .path { padding: 40px 0 44px; }
       .path .container { padding-left: 16px; padding-right: 16px; }
       .path-stage {
-        grid-template-columns: minmax(0, 1fr) minmax(118px, 132px);
-        grid-template-rows: repeat(5, 44px);
+        grid-template-columns: minmax(0, 1fr) minmax(132px, 146px);
+        grid-template-rows: repeat(5, 42px);
         column-gap: 10px;
         row-gap: 6px;
         max-width: none;
+        padding-bottom: 36px;
       }
       .path-names {
-        grid-template-rows: repeat(5, 44px);
+        grid-template-rows: repeat(5, 42px);
         gap: 6px;
       }
-      .path-names li { font-size: 0.84rem; letter-spacing: -0.03em; }
+      .path-names li { font-size: 0.8rem; letter-spacing: -0.03em; }
+      .path-drops {
+        grid-template-rows: repeat(4, 42px);
+        gap: 6px;
+      }
+      .path-drop { font-size: 0.75rem; gap: 6px; }
+      .path-arrow { width: 16px; height: 9px; }
+      .path-drop-follow { gap: 6px; padding-top: 10px; }
       .path-aside {
-        font-size: 0.78rem;
+        font-size: 0.75rem;
         line-height: 1.35;
         padding: 8px 8px 8px 10px;
       }
+      .path-cta { width: 100%; }
     }
 
     /* ===== SELECTION ===== */
@@ -1100,7 +1157,7 @@
     <div class="container">
       <div class="path-header reveal">
         <h2 class="path-title" id="path-title">The path from ad to booked job</h2>
-        <p class="path-lead">Not more ads. More booked jobs from the traffic you already have.</p>
+        <p class="path-lead">Leads drop off at every step. We find where, and fix it.</p>
       </div>
       <div class="path-stage reveal">
         <div class="path-shape">
@@ -1119,8 +1176,29 @@
             <li>Booked Job</li>
           </ul>
         </div>
-        <p class="path-aside">Reply within an hour and you're up to 7x more likely to win the job.</p>
+        <ul class="path-drops">
+          <li class="path-drop">
+            <svg class="path-arrow" viewBox="0 0 28 14" aria-hidden="true"><path d="M1 7h22M17 2l8 5-8 5" fill="none" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Wrong audience
+          </li>
+          <li class="path-drop">
+            <svg class="path-arrow" viewBox="0 0 28 14" aria-hidden="true"><path d="M1 7h22M17 2l8 5-8 5" fill="none" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Weak offer
+          </li>
+          <li class="path-drop">
+            <svg class="path-arrow" viewBox="0 0 28 14" aria-hidden="true"><path d="M1 7h22M17 2l8 5-8 5" fill="none" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Confusing page
+          </li>
+          <li class="path-drop path-drop-follow">
+            <span class="path-drop-line">
+              <svg class="path-arrow" viewBox="0 0 28 14" aria-hidden="true"><path d="M1 7h22M17 2l8 5-8 5" fill="none" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Slow reply
+            </span>
+            <p class="path-aside">Reply within an hour and you're up to 7x more likely to win the job.</p>
+          </li>
+        </ul>
       </div>
+      <a class="btn btn-primary path-cta" href="#STRIPE_LEAD_AUDIT">Get my Lead Audit ($49)</a>
     </div>
   </section>
 
